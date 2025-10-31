@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
 
       <HomePage/>
-      <hr></hr>
+      {/* <hr></hr>
       <PricingPage/>
       <hr></hr>
       <ProductPage/>
@@ -22,7 +22,7 @@ root.render(
      <hr></hr>
      <Signup/>
      <hr></hr>
-     <SupportPage/>
+     <SupportPage/> */}
       
 
    

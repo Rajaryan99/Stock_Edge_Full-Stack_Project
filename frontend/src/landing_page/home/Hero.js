@@ -2,7 +2,7 @@ import React from 'react'
 
 function Hero() {
     return ( 
-        <h1>Hero</h1>
+        <h1> <i class="fa-solid fa-heart"></i> Hero</h1>
      );
 }
 
