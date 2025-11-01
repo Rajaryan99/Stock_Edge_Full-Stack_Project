@@ -20,3 +20,7 @@ code {
 .nav-link{
   margin-left: 50px;
 }
+
+.footerlinks a{
+  color: gray;
+}
