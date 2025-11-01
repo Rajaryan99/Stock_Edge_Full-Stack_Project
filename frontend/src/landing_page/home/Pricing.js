@@ -1,8 +1,8 @@
 import React from 'react'
 
 function Pricing() {
-    return ( 
-        <div className='container' style={{marginTop:'6rem'}}>
+    return (
+        <div className='container' style={{ marginTop: '6rem' }}>
             <div className='row'>
                 <div className='col-4'>
                     <h1 className='fs-3 mb-3'>Unbeatable pricing</h1>
@@ -15,18 +15,18 @@ function Pricing() {
                     <div className='row text-center'>
                         <div className='col border p-3'>
                             <h1 className='mb-4'> <i class="fa-solid fa-indian-rupee-sign fs-3"></i> 0</h1>
-                            <p>Free equity delivery and <br/> direct mutule funds</p>
+                            <p>Free equity delivery and <br /> direct mutule funds</p>
                         </div>
                         <div className='col border p-3'>
                             <h1 className='mb-4'><i class="fa-solid fa-indian-rupee-sign fs-3"></i> 20</h1>
-                             <p> Intraday and
-F&O</p>
+                            <p> Intraday and
+                                F&O</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-     );
+    );
 }
 
 export default Pricing;
