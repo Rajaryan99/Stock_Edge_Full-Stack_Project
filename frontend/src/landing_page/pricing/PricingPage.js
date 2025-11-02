@@ -6,9 +6,9 @@ import Brokeage from './Brokerage';
 function PricingPage() {
     return ( 
         <>
-            <Navbar/>
+    
             <Hero/>
-            <Brokeage/>
+           
         </>
      );
 }
