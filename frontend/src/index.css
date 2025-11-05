@@ -63,7 +63,9 @@ code {
   color: #fff;
 }
 
-
+#supportSearch{
+  padding-left: 30px;
+}
 
 #supportSearch a {
  color: #fff;
