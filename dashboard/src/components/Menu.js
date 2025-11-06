@@ -1,6 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
+  const [selectedMenu, setSelectedMenu] = useState(0);
+  const [isProfileDropDownOpen, setisProfileDropDownOpen] = useState(false);
+
+  const handleMenuClick
   return (
     <div className="menu-container">
       <img src="logo.png" style={{ width: "50px" }} />
