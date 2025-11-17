@@ -143,48 +143,48 @@ app.get('/', (req, res) => {
 //     res.send('Done!');
 // })
 
-app.get('/addPosition', async(req, res) =>{
-    let tempPosition = [
-  {
-    product: "CNC",
-    name: "EVEREADY",
-    qty: 2,
-    avg: 316.27,
-    price: 312.35,
-    net: "+0.58%",
-    day: "-1.24%",
-    isLoss: true,
-  },
-  {
-    product: "CNC",
-    name: "JUBLFOOD",
-    qty: 1,
-    avg: 3124.75,
-    price: 3082.65,
-    net: "+10.04%",
-    day: "-1.35%",
-    isLoss: true,
-  },
-];
+// app.get('/addPosition', async(req, res) =>{
+//     let tempPosition = [
+//   {
+//     product: "CNC",
+//     name: "EVEREADY",
+//     qty: 2,
+//     avg: 316.27,
+//     price: 312.35,
+//     net: "+0.58%",
+//     day: "-1.24%",
+//     isLoss: true,
+//   },
+//   {
+//     product: "CNC",
+//     name: "JUBLFOOD",
+//     qty: 1,
+//     avg: 3124.75,
+//     price: 3082.65,
+//     net: "+10.04%",
+//     day: "-1.35%",
+//     isLoss: true,
+//   },
+// ];
 
-tempPosition.forEach((pos) => {
-    let newPosition = new PositionModel({
-    product: pos.product,
-    name:    pos.name,
-    qty:     pos.qty,
-    avg:     pos.avg,
-    price:   pos.price,
-    net:     pos.net,
-    day:     pos.day,
-    isLoss:  pos.isLoss,
-    });
+// tempPosition.forEach((pos) => {
+//     let newPosition = new PositionModel({
+//     product: pos.product,
+//     name:    pos.name,
+//     qty:     pos.qty,
+//     avg:     pos.avg,
+//     price:   pos.price,
+//     net:     pos.net,
+//     day:     pos.day,
+//     isLoss:  pos.isLoss,
+//     });
 
-    newPosition.save();
-});
+//     newPosition.save();
+// });
 
-res.send('positiom done!')
+// res.send('positiom done!')
 
-})
+// })
 
 
 
