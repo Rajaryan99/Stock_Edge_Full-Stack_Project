@@ -189,7 +189,12 @@ app.get('/', (req, res) => {
 
 app.get('/allHoldings', async(req, res) => {
   let allHoldings = await HoldingsModel.find({});
-  res.json(allHoldings);
+ res.json(allHoldings);
+})
+
+app.get('/allPosition', async(req, res) => {
+  let allPosition = await PositionModel.find({});
+  res.json(allPosition);
 })
 
 
