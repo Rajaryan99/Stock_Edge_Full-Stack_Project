@@ -2,10 +2,15 @@ const express = require('express');
 const { mongo, default: mongoose } = require('mongoose');
 require('dotenv').config();
 const {HoldingsModel} = require('./models/HoldingsModel');
-const {PositionModel} =require('./models/PositionMdel')
+const {PositionModel} =require('./models/PositionMdel');
+const bodyParser = require('body-parser');
+const cors = require('cors')
 
 
 const app = express()
+
+app.use(cors());
+app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 8080;
 const uri = process.env.MONGO_URL
