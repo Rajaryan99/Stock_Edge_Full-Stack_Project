@@ -96,7 +96,7 @@
 
 //======================== new index.js file ==========================
 
-// index.js (fixed)
+
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -112,15 +112,24 @@ const { OrderModel } = require('./models/OrderModel');
 
 const app = express();
 
-// ---------- CORS: configure BEFORE routes ----------
+
+
 const FRONTEND_ORIGINS = [
-  process.env.CLIENT_ORIGIN || 'http://localhost:3001',
-  'http://localhost:3000' // add other dev origins if needed
+    'http://localhost:3001',
+    'http://localhost:3000'
 ];
+
+if (process.env.CLIENT_ORIGIN) {
+    // Trim whitespace and push the production origin.
+    FRONTEND_ORIGINS.push(process.env.CLIENT_ORIGIN.trim());
+}
+// const FRONTEND_ORIGINS = [
+//   process.env.CLIENT_ORIGIN || 'http://localhost:3001',
+//   'http://localhost:3000' 
+// ];
 
 const corsOptions = {
   origin: (origin, callback) => {
-    // allow requests with no origin (curl/postman/server)
     if (!origin) return callback(null, true);
     if (FRONTEND_ORIGINS.includes(origin)) {
       return callback(null, true);
@@ -132,20 +141,16 @@ const corsOptions = {
   allowedHeaders: ['Content-Type','Authorization']
 };
 
-// Use the configured CORS middleware (handles preflight)
 app.use(cors(corsOptions));
 
-// ---------- Standard middleware ----------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// ---------- Routes (after CORS middleware) ----------
 app.use('/', authRoute);
 
-// your other routes
 app.get('/', (req, res) => res.send('helloWorld'));
 
 app.get('/allHoldings', async (req, res) => {
@@ -171,7 +176,6 @@ app.post('/newOrder', async (req, res) => {
   }
 });
 
-// ---------- Start server & DB ----------
 const PORT = process.env.PORT || 8080;
 const uri = process.env.MONGO_URL;
 
