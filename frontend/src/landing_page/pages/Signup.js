@@ -30,7 +30,7 @@ const Signup = () => {
       
       console.log("Sending signup request:", inputValue);
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/login`, 
+         `${process.env.REACT_APP_API_URL}/signup`, //  "http://localhost:8080/signup",
         inputValue,
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
