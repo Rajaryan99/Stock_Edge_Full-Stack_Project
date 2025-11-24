@@ -1,8 +1,7 @@
 // src/landing_page/signup/Signup.js
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// If you created src/api.js (recommended), import that; otherwise fallback to axios
-// import API from "../../api";
+
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -28,10 +27,10 @@ const Signup = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      // If you have src/api.js, use: const res = await API.post('/signup', inputValue);
+      
       console.log("Sending signup request:", inputValue);
       const res = await axios.post(
-        "http://localhost:8080/signup", // change if your route is prefixed
+        "http://localhost:8080/signup", 
         inputValue,
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
@@ -46,7 +45,6 @@ const Signup = () => {
         handleError(message || "Signup failed");
       }
     } catch (error) {
-      // More helpful error reporting:
       console.error("Signup request error:", error);
       const serverMsg = error?.response?.data?.message || error?.response?.data || error.message || "Network error";
       handleError(serverMsg);
