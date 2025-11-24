@@ -89,7 +89,7 @@ code {
 }
 
 /* authentication page css */
-/* 
+
 *,
 ::before,
 ::after {
@@ -109,23 +109,13 @@ body {
   width: 100%;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(143, 187, 204, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+
 
 .form_container {
   background-color: #fff;
   padding: 2rem 3rem;
   border-radius: 0.5rem;
+  margin: auto;
   width: 100%;
   max-width: 400px;
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
@@ -219,4 +209,4 @@ span a {
     padding: 0.6rem 1rem;
     font-size: 1.5rem;
   }
-}  */
+}

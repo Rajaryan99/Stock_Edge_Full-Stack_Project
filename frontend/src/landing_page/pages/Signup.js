@@ -30,7 +30,7 @@ const Signup = () => {
       
       console.log("Sending signup request:", inputValue);
       const res = await axios.post(
-        "http://localhost:8080/signup", 
+        `${process.env.REACT_APP_API_URL}/login`, 
         inputValue,
         { withCredentials: true, headers: { "Content-Type": "application/json" } }
       );
@@ -55,6 +55,7 @@ const Signup = () => {
   };
 
   return (
+    <div className="container mt-5 mb-5">
     <div className="form_container">
       <h2>Signup Account</h2>
       <form onSubmit={handleSubmit}>
@@ -99,6 +100,7 @@ const Signup = () => {
         </span>
       </form>
       <ToastContainer />
+    </div>
     </div>
   );
 };

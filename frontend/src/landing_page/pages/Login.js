@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/login",
+        `${process.env.REACT_APP_API_URL}/login`,       // "http://localhost:8080/login",
         {
           ...inputValue,
         },
@@ -42,7 +42,7 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-         window.location.href = "http://localhost:3000/" //navigate("/");
+         window.location.href = "http://localhost:3000/"
         }, 1000);
       } else {
         handleError(message);
@@ -58,7 +58,8 @@ const Login = () => {
   };
 
   return (
-    <div className="form_container">
+    <div className="container mt-5 mb-5">
+    <div className="form_container ">
       <h2>Login Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -87,6 +88,7 @@ const Login = () => {
         </span>
       </form>
       <ToastContainer />
+    </div>
     </div>
   );
 };
